@@ -16,6 +16,7 @@ export const CloseBtn = styled.button`
   border: none;
   cursor: pointer;
   position: absolute;
+  z-index: 10;
   top: 0.7rem;
   right: 0.3rem;
   width: 4ch;
@@ -33,8 +34,15 @@ export const ImageBg = styled.div`
   width: 100%;
   height: 250px;
   border-radius: 7px;
+  background-image: ${(props) => `url(${props.imgSrc})`};
   background-position: center;
   background-size: cover;
+  animation: scale ease-in-out 2s;
+
+  &:hover {
+    scale: 1.06;
+    cursor: pointer;
+  }
 `;
 
 export const NameStatusWrapper = styled.div`
@@ -45,6 +53,7 @@ export const NameStatusWrapper = styled.div`
   width: 95%;
   gap: 7px;
   align-items: center;
+  box-shadow: none;
 `;
 
 export const NameSpan = styled.span`
@@ -56,6 +65,11 @@ export const NameSpan = styled.span`
 `;
 
 export const AliveStatusBar = styled.div`
+  background-color: ${(props) => (props.isAlive ? "yellowgreen" : "red")};
+  box-shadow: ${(props) =>
+    props.isAlive
+      ? "-1px 3px 46px 2px rgb(44, 244, 18)"
+      : "-1px 3px 46px 2px rgba(244,18,18,1)"};
   height: 20px;
   border-radius: 7px;
   width: 55%;

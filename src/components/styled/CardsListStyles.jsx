@@ -10,5 +10,5 @@ export const Wrapper = styled.div`
 
   width: 80%;
   margin: 0 auto;
-  padding-top: 185px;
+  padding-top: 18px;
 `;

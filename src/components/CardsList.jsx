@@ -1,14 +1,22 @@
 import Card from "./Card";
-import data from "../utils/provisionalData";
 import { Wrapper } from "./styled/CardsListStyles";
 
-export default function CardsList() {
+export default function CardsList(props) {
+  const { data, setData } = props;
+
+  const closeHandler = (id) => {
+    setData((prev) => {
+      const removed = prev.filter((e) => e.id !== id);
+      return removed;
+    });
+  };
+
   // Object[name, gender, ...etc]
   return (
     <>
       <Wrapper>
         {data.map((e) => (
-          <Card key={e.name} chara={e} />
+          <Card key={e.id} chara={e} {...{ closeHandler }} />
         ))}
       </Wrapper>
     </>

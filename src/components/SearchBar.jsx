@@ -1,17 +1,33 @@
 import { useRef } from "react";
-import { SearchComponent } from "./styled/SearchBarStyles";
+import { SearchComponent, Header } from "./styled/SearchBarStyles";
+import { searchHandler, addRndCharacter } from "../utils/handlers";
 
 export default function SearchBar(props) {
-  const searchInput = useRef(null);
+  const { data, setData } = props;
+  const searchInput = useRef("");
 
   return (
-    <SearchComponent>
-      <div>
-        <input type="search" ref={searchInput} />
-        <button onClick={() => props.searchHandler(searchInput)}>
-          Agregar
-        </button>
-      </div>
-    </SearchComponent>
+    <>
+      <Header>
+        <h1>
+          <img src="/rick-title.png" alt="animated title of rick&morty" />
+        </h1>
+      </Header>
+      <SearchComponent>
+        <div>
+          <input
+            type="text"
+            ref={searchInput}
+            placeholder="Add by name (one string)"
+          />
+          <button onClick={() => searchHandler(searchInput, data, setData)}>
+            Agregar
+          </button>
+          <button onClick={() => addRndCharacter(data, setData)}>
+            Add random
+          </button>
+        </div>
+      </SearchComponent>
+    </>
   );
 }
