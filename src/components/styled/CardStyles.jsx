@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const CardContainer = styled.div`
   position: relative;
@@ -10,6 +11,21 @@ export const CardContainer = styled.div`
   align-items: center;
   gap: 7px;
   border-radius: 7px;
+
+  a {
+    width: 100%;
+    height: 250px;
+    border-radius: 7px;
+    background-image: ${(props) => `url(${props.imgSrc})`};
+    background-position: center;
+    background-size: cover;
+    animation: scale ease-in-out 2s;
+
+    &:hover {
+      cursor: pointer;
+      scale: 1.06;
+    }
+  }
 `;
 
 export const CloseBtn = styled.button`
@@ -27,21 +43,6 @@ export const CloseBtn = styled.button`
 
   &:hover {
     box-shadow: 0px 1px 0px 1px rgba(244, 18, 18, 1);
-  }
-`;
-
-export const ImageBg = styled.div`
-  width: 100%;
-  height: 250px;
-  border-radius: 7px;
-  background-image: ${(props) => `url(${props.imgSrc})`};
-  background-position: center;
-  background-size: cover;
-  animation: scale ease-in-out 2s;
-
-  &:hover {
-    scale: 1.06;
-    cursor: pointer;
   }
 `;
 
@@ -88,3 +89,19 @@ export const DetailsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
 `;
+
+// * Send props to styled component (must be compatible tag)
+// export const ImageBg = styled.div`
+// width: 100%;
+//     height: 250px;
+//     border-radius: 7px;
+//     background-image: ${(props) => `url(${props.imgSrc})`};
+//     background-position: center;
+//     background-size: cover;
+//     animation: scale ease-in-out 2s;
+
+//     &:hover {
+//       cursor: pointer;
+//       scale: 1.06;
+//     }
+// `;

@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <>
       <h1>I AM A FOOTER</h1>
-      <Link to={"/login"}>Go login cumsack</Link>
-      <Link to={"/contact"}>Contact me babe</Link>
-      <Link to={"/"}>Contact me babe</Link>
+      <Link to={"/login"}>Go LOGIN PAGE</Link>
+      <Link to={"/contact"}>Go CONTACT PAGE</Link>
+      <Link to={"/"}>Go HOME PAGE</Link>
     </>
   );
 }
