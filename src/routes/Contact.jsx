@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import InProgress from "../components/InProgress";
 
 export default function Contact() {
   return (
     <div>
-      <h1>COCKTACT</h1>
+      <InProgress />
     </div>
   );
 }
