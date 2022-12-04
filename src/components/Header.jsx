@@ -1,19 +1,18 @@
 import { Link } from "react-router-dom";
+import { Navbar } from "./styled/HeaderStyles";
 
 export default function Header() {
   return (
-    <>
-      <ul>
-        <li>
-          <Link>LOGIN PAGE</Link>
-        </li>
-        <li>
-          <Link>CONTACT PAGE</Link>
-        </li>
-        <li>
-          <Link>HOME PAGE</Link>
-        </li>
-      </ul>
-    </>
+    <Navbar>
+      <li>
+        <Link to={"/login"}>LOGIN PAGE</Link>
+      </li>
+      <li>
+        <Link to={"/contact"}>CONTACT PAGE</Link>
+      </li>
+      <li>
+        <Link to={"/"}>HOME PAGE</Link>
+      </li>
+    </Navbar>
   );
 }

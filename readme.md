@@ -1,5 +1,6 @@
-# part 1
-- Make the site wirk whit static data
+# todo:
+- Make the details component more robust
+  - Only show available data and double check every prop
+  - Only when every prop fails, show the crashed ship img
 
-# part 2
-- adds style whit styled components
+

@@ -31,12 +31,13 @@ export const SearchComponent = styled.div`
   width: 100%;
 
   div {
-    width: 60%;
-    max-width: 450px;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 0.7rem;
+    width: 60%;
+    max-width: 450px;
+    margin: 0 auto;
     background-color: rgba(164, 255, 28, 0.611);
     padding: 5% 7%;
     border-radius: 13px;

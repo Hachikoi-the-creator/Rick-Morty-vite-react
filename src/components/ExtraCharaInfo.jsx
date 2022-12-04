@@ -1,3 +1,4 @@
+import IncompleteDetails from "./IncompleteDetails";
 import {
   ImageWrapper,
   InnerContainer,
@@ -7,10 +8,8 @@ import {
 } from "./styled/ExtraCharaInfoStyles";
 
 export default function ExtraCharaInfo(props) {
-  if (!props.chara) {
-    console.log("PPUSSY CAT");
-    return "LOADING";
-  }
+  if (!props.chara) return <IncompleteDetails />;
+
   const {
     status,
     species,
