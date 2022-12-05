@@ -1,10 +1,23 @@
 import styled from "styled-components";
+import { greenButton } from "./Mixins";
 
-export const Header = styled.header`
+const Header = styled.header`
   min-height: 20vw;
   padding: 13px;
   display: flex;
   justify-content: center;
+
+  img {
+    animation: titleAnimation infinite ease-in-out 3s;
+  }
+
+  /* <= 500 */
+  @media (max-width: 500px) {
+    img {
+      width: 80%;
+      margin: 0 10%;
+    }
+  }
 
   @keyframes titleAnimation {
     0% {
@@ -20,13 +33,9 @@ export const Header = styled.header`
       filter: drop-shadow(0 0 0 #005f95) brightness(1);
     }
   }
-
-  img {
-    animation: titleAnimation infinite ease-in-out 3s;
-  }
 `;
 
-export const SearchComponent = styled.div`
+const SearchComponent = styled.div`
   z-index: 1;
   width: 100%;
 
@@ -38,7 +47,7 @@ export const SearchComponent = styled.div`
     width: 60%;
     max-width: 450px;
     margin: 0 auto;
-    background-color: rgba(164, 255, 28, 0.611);
+    background: linear-gradient(220deg, var(--grad-purple), var(--grad-blue));
     padding: 5% 7%;
     border-radius: 13px;
     border: 3px solid yellowgreen;
@@ -66,56 +75,8 @@ export const SearchComponent = styled.div`
       margin-bottom: 0.5rem;
     }
 
-    button,
-    button::after,
-    button::before {
-      /* border-radius: 17px; */
-    }
-
-    button {
-      color: black;
-      font-weight: 600;
-      letter-spacing: 2px;
-      cursor: pointer;
-      border: none;
-      border-bottom: 2px solid #9f0000;
-      display: inline-block;
-      padding: 0.5rem;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-
-      &::after,
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-      }
-
-      &::after {
-        height: 100%;
-        background-color: #ff5f5f;
-        z-index: -2;
-      }
-
-      &::before {
-        height: 0%;
-        background-color: #9f0000;
-        transition: all 0.3s;
-        z-index: -1;
-      }
-
-      &:hover {
-        color: #fff;
-        border: none;
-
-        &::before {
-          height: 100%;
-        }
-      }
-    }
+    ${greenButton}
   }
 `;
+
+export { Header, SearchComponent };

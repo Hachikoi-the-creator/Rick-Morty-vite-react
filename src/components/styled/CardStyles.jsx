@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
+const CardContainer = styled.div`
   position: relative;
   min-height: 300px;
   min-width: 200px;
@@ -27,7 +27,7 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const CloseBtn = styled.button`
+const CloseBtn = styled.button`
   border: none;
   cursor: pointer;
   position: absolute;
@@ -45,7 +45,7 @@ export const CloseBtn = styled.button`
   }
 `;
 
-export const NameStatusWrapper = styled.div`
+const NameStatusWrapper = styled.div`
   position: absolute;
   bottom: 3.3rem;
   display: flex;
@@ -56,7 +56,7 @@ export const NameStatusWrapper = styled.div`
   box-shadow: none;
 `;
 
-export const NameSpan = styled.span`
+const NameSpan = styled.span`
   text-align: center;
   background-color: rgba(188, 255, 245, 0.757);
   border-radius: 7px;
@@ -64,7 +64,7 @@ export const NameSpan = styled.span`
   width: 100%;
 `;
 
-export const AliveStatusBar = styled.div`
+const AliveStatusBar = styled.div`
   background-color: ${(props) => (props.isAlive ? "yellowgreen" : "red")};
   box-shadow: ${(props) =>
     props.isAlive
@@ -75,11 +75,11 @@ export const AliveStatusBar = styled.div`
   width: 55%;
 `;
 
-export const ImageStyle = styled.img`
+const ImageStyle = styled.img`
   border-radius: 7px;
 `;
 
-export const DetailsWrapper = styled.div`
+const DetailsWrapper = styled.div`
   text-shadow: 0 0 10px #ffffff, 2px 2px 2px rgba(111, 229, 255, 0);
   margin-bottom: 0.5rem;
   background-color: #5fffb291;
@@ -89,18 +89,12 @@ export const DetailsWrapper = styled.div`
   justify-content: space-around;
 `;
 
-// * Send props to styled component (must be compatible tag)
-// export const ImageBg = styled.div`
-// width: 100%;
-//     height: 250px;
-//     border-radius: 7px;
-//     background-image: ${(props) => `url(${props.imgSrc})`};
-//     background-position: center;
-//     background-size: cover;
-//     animation: scale ease-in-out 2s;
-
-//     &:hover {
-//       cursor: pointer;
-//       scale: 1.06;
-//     }
-// `;
+export {
+  DetailsWrapper,
+  ImageStyle,
+  AliveStatusBar,
+  NameSpan,
+  NameStatusWrapper,
+  CardContainer,
+  CloseBtn,
+};

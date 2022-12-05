@@ -1,34 +1,15 @@
-import styled from "styled-components";
+import { css } from "styled-components";
 
-const Navbar = styled.ul`
-  display: flex;
-  list-style: none;
-  justify-content: space-evenly;
-  align-items: center;
-  height: fit-content;
-  padding: 1rem;
-  background-color: #6500b5b5;
-  border-radius: 0 0 1rem 1rem;
-  width: 100%;
-
-  /* <= 500 */
-  @media (max-width: 500px) {
-    flex-direction: column;
+const greenButton = css`
+  button,
+  button::after,
+  button::before {
+    border-radius: 7px;
   }
 
-  /* cooler animation */
-  a,
-  a::after,
-  a::before {
-    border-radius: var(--normal-radius);
-  }
-
-  a {
-    text-decoration: none;
-    display: inline-block;
-    padding: 0.5rem;
+  button {
     color: #ffffff;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 2px;
     cursor: pointer;
     border: none;
@@ -43,7 +24,6 @@ const Navbar = styled.ul`
     &::after,
     &::before {
       content: "";
-
       position: absolute;
       bottom: 0;
       left: 0;
@@ -51,8 +31,8 @@ const Navbar = styled.ul`
     }
 
     &::after {
-      background-color: var(--dark-green);
       height: 100%;
+      background-color: var(--dark-green);
       z-index: -2;
     }
 
@@ -64,7 +44,7 @@ const Navbar = styled.ul`
     }
 
     &:hover {
-      color: black;
+      color: #1a1a1a;
       border: none;
 
       &::before {
@@ -74,4 +54,7 @@ const Navbar = styled.ul`
   }
 `;
 
-export { Navbar };
+const greenAchor = `
+
+`;
+export { greenButton };

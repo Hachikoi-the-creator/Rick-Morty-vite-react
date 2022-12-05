@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   CardContainer,
   CloseBtn,
@@ -6,7 +7,6 @@ import {
   DetailsWrapper,
   NameStatusWrapper,
 } from "./styled/CardStyles";
-import { Link } from "react-router-dom";
 
 export default function Card(props) {
   const { name, species, gender, image, status, id } = props.chara;

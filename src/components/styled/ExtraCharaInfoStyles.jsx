@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   color: white;
   text-shadow: 0 0 10px #ffffff, 2px 2px 2px rgba(206, 89, 55, 0);
   display: flex;
@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   text-align: center;
 `;
 
-export const InnerContainer = styled.div`
+const InnerContainer = styled.div`
   width: 60%;
   background-color: #0000002c;
   border-radius: 23px;
@@ -27,7 +27,7 @@ export const InnerContainer = styled.div`
   }
 `;
 
-export const StatusDiv = styled.div`
+const StatusDiv = styled.div`
   width: 300px;
   height: 1rem;
   border-radius: 1.5rem;
@@ -47,7 +47,7 @@ function returnStatusColor({ status }) {
   }
 }
 
-export const ImageWrapper = styled.div`
+const ImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,7 +73,7 @@ export const ImageWrapper = styled.div`
   }
 `;
 
-export const InfoWrapper = styled.div`
+const InfoWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -101,3 +101,5 @@ export const InfoWrapper = styled.div`
     background-color: red;
   }
 `;
+
+export { Wrapper, InnerContainer, StatusDiv, ImageWrapper, InfoWrapper };

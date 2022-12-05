@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const IncompleteWrapper = styled.div`
+const IncompleteWrapper = styled.div`
   padding: 3rem;
   text-align: center;
   color: white;
@@ -12,3 +12,5 @@ export const IncompleteWrapper = styled.div`
     margin: 2rem auto;
   }
 `;
+
+export { IncompleteWrapper };

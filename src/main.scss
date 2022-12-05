@@ -15,6 +15,28 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  //
+  line-height: 1.4;
+  // font-size: calc(0.6rem + 0.4vw);
+  /*********************
+  COLORS 
+  *********************/
+  --light-red: #ff5f5f;
+  --dark-red: #9f0000;
+
+  --light-green: #33eb33;
+  --green: #4bd54b;
+  --darker-green: #2e732e;
+  --dark-green: #1b4a1b;
+
+  --grad-purple: rgba(0, 15, 131, 0.5);
+  --grad-blue: rgba(140, 0, 255, 0.5);
+
+  /*********************
+  Sizes
+  *********************/
+  --normal-radius: 7px;
+  --big-radius: 17px;
 }
 
 *,
@@ -23,6 +45,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  // no f-idea of what caused this
+  overflow-x: hidden;
 }
 
 body {
@@ -37,124 +66,12 @@ body {
   // something broke kekWait
   position: absolute;
   left: 0;
-  width: 100vw;
-}
-
-//* testin
-//* testin input
-//* testin input code
-
-@import url("https://rsms.me/inter/inter.css");
-:root {
-  line-height: 1.4;
-  font-family: "Inter", sans-serif;
-  font-size: calc(0.6rem + 0.4vw);
-  font-weight: 300;
-  padding: 0 calc(0.5rem * 3);
-}
-
-.card {
-  background: #212121;
-  padding: 2rem;
-  margin-top: 2rem;
-  border-radius: 7px;
-  border: 3px solid white;
-  box-shadow: 0.5rem 0.5rem 0 yellow;
-
-  &--inverted {
-    color: white;
-  }
-
-  &--accent {
-    color: #212121;
-  }
-}
-
-.form-title {
-  display: flex;
-  // justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  gap: 1rem;
-
-  img {
-    width: 30px;
-  }
-
-  h2 {
-    font-weight: 900;
-  }
-}
-
-.input {
-  position: relative;
-
-  &__label {
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: calc(0.5rem * 0.75) calc(0.5rem * 0.5);
-    margin: calc(0.5rem * 0.75 + 3px) calc(0.5rem * 0.5);
-    background: #212121;
-    white-space: nowrap;
-    transform: translate(0, 0);
-    transform-origin: 0 0;
-    transition: transform 120ms ease-in;
-    font-weight: bold;
-    line-height: 1.2;
-  }
-
-  &__field {
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    border: 3px solid currentColor;
-    padding: calc(0.5rem * 1.5) 0.5rem;
-    color: currentColor;
-    background: transparent;
-    border-radius: 7px;
-
-    &:focus,
-    &:not(:placeholder-shown) {
-      & + .input__label {
-        transform: translate(0.25rem, -65%) scale(0.8);
-        color: #fab700;
-      }
-    }
-  }
-}
-
-.button-group {
-  margin-top: calc(0.5rem * 2.5);
 }
 
 button {
-  cursor: pointer;
-  color: currentColor;
-  padding: 0.5rem calc(0.5rem * 2);
-  background: #fab700;
   border: none;
-  border-radius: 7px;
-  font-weight: 900;
-
-  &[type="reset"] {
-    background-color: red;
-    // font-weight: 400;
-    // border 1px solid red;
-  }
+  cursor: pointer;
 }
-
-button + button {
-  margin-left: calc(0.5rem * 2);
-}
-
-.icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  margin-right: 0.5em;
-}
-
-.hidden {
-  display: none;
-}
+//* testin
+//* testin input
+//* testin input code

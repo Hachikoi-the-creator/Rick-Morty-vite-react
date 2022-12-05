@@ -1,25 +1,32 @@
 import Input from "./Input";
-// import { Container, FormTitle } from "./styled/FormsStyles";
+import {
+  FormTitle,
+  InputWrapper,
+  ButtonGroup,
+  FormWrapper,
+} from "./styled/FormsStyles";
 
 export default function Form() {
   return (
     <>
-      <div className="card card--inverted">
-        <div className="form-title">
+      <FormWrapper>
+        <FormTitle>
           <img src="/ufo.png" alt="litle red ufo icon" />
           <h2>Login</h2>
-        </div>
+        </FormTitle>
 
-        <label className="input">
-          <input className="input__field" type="text" placeholder=" " />
-          <span className="input__label">Some Fancy Label</span>
-        </label>
+        <InputWrapper>
+          <label className="label">
+            <input className="label__field" type="text" placeholder=" " />
+            <span className="label__span">Some Fancy Label</span>
+          </label>
+        </InputWrapper>
 
-        <div className="button-group">
+        <ButtonGroup>
           <button>Send</button>
           <button type="reset">Reset</button>
-        </div>
-      </div>
+        </ButtonGroup>
+      </FormWrapper>
     </>
   );
 }
