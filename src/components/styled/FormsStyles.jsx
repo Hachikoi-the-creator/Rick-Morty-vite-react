@@ -27,6 +27,8 @@ const FormTitle = styled.div`
 `;
 
 const InputWrapper = styled.div`
+  margin-bottom: 2rem;
+
   .label {
     position: relative;
 
@@ -76,7 +78,6 @@ const InputWrapper = styled.div`
 const ButtonGroup = styled.div`
   display: flex;
   gap: 1rem;
-  padding-top: 1rem;
   ${greenButton}
 `;
 
