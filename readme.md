@@ -1,7 +1,7 @@
 # [Live Deployment](https://rick-morty-vite-react.vercel.app/)
 
 # todo:
-- empty :DDD
+- add a better looking navbar icons (svgs)
 
 # Done
 - Found how to use variables (Global styles) so all colors and default border radius change it for variables
@@ -20,6 +20,7 @@
 - add cute heart favicon
 - added work in progress components where needed
 - upgraded navigation links
+- input check on search
 
 
 # Credits

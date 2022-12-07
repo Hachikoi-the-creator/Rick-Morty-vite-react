@@ -1,4 +1,6 @@
-export function searchHandler(ref, dataState, stateModifier) {
+export function searchHandler(ref, dataState, stateModifier, inputIsValid) {
+  if (!inputIsValid) return false;
+
   const charaName = ref.current.value;
 
   // check if the name has spaces, if so show an error

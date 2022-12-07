@@ -37,7 +37,7 @@ const InputWrapper = styled.div`
       border-radius: var(--normal-radius);
       position: absolute;
       left: 3px;
-      top: -3px;
+      top: -8%;
       padding: calc(0.5rem * 0.75) calc(0.5rem * 0.5);
       margin: calc(0.5rem * 0.75 + 3px) calc(0.5rem * 0.5);
       white-space: nowrap;

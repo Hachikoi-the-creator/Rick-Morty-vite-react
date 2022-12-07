@@ -36,10 +36,25 @@ const Header = styled.header`
 `;
 
 const SearchComponent = styled.div`
+  .label {
+    position: relative;
+    bottom: -12px;
+
+    &__span {
+      top: 2px;
+    }
+  }
+
   z-index: 1;
   width: 100%;
+  color: white;
 
-  div {
+  .wrong-input {
+    border: 3px solid red;
+    background-color: rgb(62 4 0 / 63%);
+  }
+
+  > div {
     display: flex;
     justify-content: center;
     flex-direction: column;
