@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SearchBar from "../components/SearchBar";
 import CardsList from "../components/CardsList";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Home() {
   const [data, setData] = useState([]);

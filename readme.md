@@ -7,7 +7,6 @@
 - and a new route where it shows their favourite characters
 
 
-
 # Done
 - add a better looking navbar icons (svgs)
 - Found how to use variables (Global styles) so all colors and default border radius change it for variables
@@ -33,6 +32,17 @@
 - [Alien Png by smalllikeart](https://www.flaticon.com/authors/smalllikeart)
 - [Thumbails on social media](https://css-tricks.com/essential-meta-tags-social-media/)
 - [UNBELIABLE free svg src](https://loading.io/)
+
+# Later updates
+- [Redux RTK](https://redux-toolkit.js.org/rtk-query/overview)
+- [Redux updated](https://redux.js.org/tutorials/fundamentals/part-6-async-logic#example-rest-api-and-client)
+
+## Extra stuff
+- [redux store devtools problem](https://github.com/jhen0409/react-native-debugger/issues/280)
+
+
+## Old redux installation
+npm i redux@4.2.0 react-redux@^8.0.2 redux-thunk@^2.4.1
 
 **Extra delay on card details is because I make another API call everytime I enter that component, to fetch extra info about that character**
 
