@@ -1,3 +1,4 @@
+import { useState } from "react";
 import IncompleteDetails from "./IncompleteDetails";
 import {
   ImageWrapper,
@@ -8,16 +9,23 @@ import {
 } from "./styled/ExtraCharaInfoStyles";
 
 export default function ExtraCharaInfo(props) {
-  if (!props.chara) return <IncompleteDetails />;
+  // if (!props.chara) return <IncompleteDetails />;
+  // props.missingInfo
+  if (props.missingInfo) {
+    // setHasFullInfo(false);
+    console.log("REDACTED");
+  } else {
+    console.log("POGGERS");
+  }
 
   const {
     status,
     species,
-    origin,
     name,
     image,
     gender,
     episode: episodesAppeareances,
+    location,
   } = props.chara;
 
   return (
@@ -34,23 +42,17 @@ export default function ExtraCharaInfo(props) {
           <div className="left">
             <p className="after">{gender}</p>
             <span className="rndSpan"></span>
-            <p>{species}</p>
+            <div className="after">
+              Appears in {episodesAppeareances.length} Episodes
+            </div>
           </div>
 
           <div className="right">
-            {episodesAppeareances.length === 1 ? (
-              <div className="after">
-                Appears in {episodesAppeareances.length} Episode
-              </div>
-            ) : (
-              <div className="after">
-                Appears in {episodesAppeareances.length} Episodes
-              </div>
-            )}
+            <p>{species}</p>
             <span className="rndSpan"></span>
             <div>
-              <p>{origin.type}:</p>
-              <p>{origin.name}.</p>
+              <p>Lives in:</p>
+              <p>{location.name}</p>
             </div>
           </div>
         </InfoWrapper>

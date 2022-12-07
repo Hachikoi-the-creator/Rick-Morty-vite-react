@@ -1,9 +1,14 @@
 # [Live Deployment](https://rick-morty-vite-react.vercel.app/)
 
 # todo:
-- Found how to use variables (Global styles) so all colors and default border radius change it for variables
+- empty :DDD
 
 # Done
+- Found how to use variables (Global styles) so all colors and default border radius change it for variables
+- add a loading state to card component, and fetch the extra info there, if after the info was fetched there still was no new change, show the missing info component
+  - furthermore check more exaustively what info is missing and just add [REDACTED] instead
+  - added a pretty cool animated svg!
+  - instead of doing another API petition just did a single one and everything goes way better now :DDDD
 - Actually do something whit the login page kek
 - Make the details component more robust
   - Only show available data and double check every prop
@@ -20,8 +25,7 @@
 # Credits
 - [Alien Png by smalllikeart](https://www.flaticon.com/authors/smalllikeart)
 - [Thumbails on social media](https://css-tricks.com/essential-meta-tags-social-media/)
+- [UNBELIABLE free svg src](https://loading.io/)
 
 **Extra delay on card details is because I make another API call everytime I enter that component, to fetch extra info about that character**
 
-### fast commits
-$ git add . && git commit -m "kind finished" && git push
