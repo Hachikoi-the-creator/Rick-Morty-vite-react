@@ -1,9 +1,15 @@
 # [Live Deployment](https://rick-morty-vite-react.vercel.app/)
 
 # todo:
-- add a better looking navbar icons (svgs)
+- add redux to the whole app and maage the state there
+- Once the global state is running, be sure to fix the removing characters on load behaivour
+- add favourite option
+- and a new route where it shows their favourite characters
+
+
 
 # Done
+- add a better looking navbar icons (svgs)
 - Found how to use variables (Global styles) so all colors and default border radius change it for variables
 - add a loading state to card component, and fetch the extra info there, if after the info was fetched there still was no new change, show the missing info component
   - furthermore check more exaustively what info is missing and just add [REDACTED] instead
