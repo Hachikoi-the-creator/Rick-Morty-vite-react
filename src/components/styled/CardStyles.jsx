@@ -1,4 +1,6 @@
 import styled from "styled-components";
+// --normal-radius: 0.5rem;
+// --big-radius: 1rem;
 
 const CardContainer = styled.div`
   position: relative;
@@ -9,12 +11,12 @@ const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 7px;
-  border-radius: 7px;
+  border-radius: var(--normal-radius);
 
   a {
     width: 100%;
     height: 250px;
-    border-radius: 7px;
+    border-radius: var(--normal-radius);
     background-image: ${(props) => `url(${props.imgSrc})`};
     background-position: center;
     background-size: cover;
@@ -37,11 +39,30 @@ const CloseBtn = styled.button`
   width: 4ch;
   height: 4ch;
   border-radius: 4ch;
-  background-color: rgb(241, 27, 27);
-  box-shadow: 0px 1px 1px 2px rgba(244, 18, 18, 1);
+  background-color: rgb(186, 0, 0);
+  box-shadow: 1px 1px 26px 1px rgb(244 18 18);
 
   &:hover {
-    box-shadow: 0px 1px 0px 1px rgba(244, 18, 18, 1);
+    transform: rotate(180deg);
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: closeButtonHover 2s ease-in-out infinite;
+  }
+
+  @keyframes closeButtonHover {
+    0% {
+      box-shadow: 1px 1px 26px 1px rgb(244 18 18);
+      /* -webkit-box-shadow: 1px 3px 27px 3px rgba(0, 0, 0, 0.48);
+      -moz-box-shadow: 1px 3px 27px 3px rgba(0, 0, 0, 0.48); */
+      scale: 0.9;
+    }
+    50% {
+      box-shadow: 1px 1px 26px 1px #ff2323;
+      scale: 1;
+    }
+    100% {
+      box-shadow: 1px 1px 26px 1px rgb(244 18 18);
+      scale: 0.9;
+    }
   }
 `;
 
@@ -59,7 +80,7 @@ const NameStatusWrapper = styled.div`
 const NameSpan = styled.span`
   text-align: center;
   background-color: rgba(188, 255, 245, 0.757);
-  border-radius: 7px;
+  border-radius: var(--normal-radius);
   text-shadow: 0 0 10px #ffffff, 2px 2px 2px rgba(111, 229, 255, 0);
   width: 100%;
 `;
@@ -71,12 +92,12 @@ const AliveStatusBar = styled.div`
       ? "-1px 3px 46px 2px rgb(44, 244, 18)"
       : "-1px 3px 46px 2px rgba(244,18,18,1)"};
   height: 20px;
-  border-radius: 7px;
+  border-radius: var(--normal-radius);
   width: 55%;
 `;
 
 const ImageStyle = styled.img`
-  border-radius: 7px;
+  border-radius: var(--normal-radius);
 `;
 
 const DetailsWrapper = styled.div`
@@ -84,7 +105,7 @@ const DetailsWrapper = styled.div`
   margin-bottom: 0.5rem;
   background-color: #5fffb291;
   width: 100%;
-  border-radius: 7px;
+  border-radius: var(--normal-radius);
   display: flex;
   justify-content: space-around;
 `;

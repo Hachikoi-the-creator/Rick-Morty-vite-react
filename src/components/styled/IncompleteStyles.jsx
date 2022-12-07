@@ -8,7 +8,7 @@ const IncompleteWrapper = styled.div`
   img {
     width: 50%;
     min-width: 500px;
-    border-radius: 7px;
+    border-radius: var(--normal-radius);
     margin: 2rem auto;
   }
 `;

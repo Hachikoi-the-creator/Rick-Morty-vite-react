@@ -4,7 +4,7 @@
  * @param {String} inputValue
  * @returns {Boolean}
  */
-function validate(fieldName, inputValue) {
+function validate(fieldName, inputValue, secondVal = "", thirdVal = "") {
   switch (fieldName) {
     case "name":
       return verifyName(inputValue);
@@ -13,11 +13,7 @@ function validate(fieldName, inputValue) {
     case "psw":
       return verifyPassword(inputValue);
     case "all":
-      return (
-        verifyName(inputValue) &&
-        verifyEmail(inputValue) &&
-        verifyPassword(inputValue)
-      );
+      return verifyAllInputs(inputValue, secondVal, thirdVal);
     default:
       console.log("Something broke in input validations :C");
       return { err: "something went bad" };
@@ -35,8 +31,11 @@ function verifyEmail(inputValue) {
 }
 
 function verifyPassword(inputValue) {
-  // return (isSecure())
-  return true;
+  return inputValue.length > 12 + 1;
+}
+
+function verifyAllInputs(nameIn, emailIn, pswIn) {
+  return verifyName(nameIn) && verifyEmail(emailIn) && verifyPassword(pswIn);
 }
 
 export { validate };

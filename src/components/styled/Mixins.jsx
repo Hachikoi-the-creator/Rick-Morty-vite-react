@@ -4,7 +4,7 @@ const greenButton = css`
   button,
   button::after,
   button::before {
-    border-radius: 7px;
+    border-radius: var(--normal-radius);
   }
 
   button {
@@ -14,6 +14,7 @@ const greenButton = css`
     cursor: pointer;
     border: none;
     border-bottom: 2px solid var(--light-green);
+    border-left: 2px solid var(--light-green);
     display: inline-block;
     padding: 0.5rem;
     transition: all 0.3s;
@@ -27,17 +28,20 @@ const greenButton = css`
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 100%;
+      /* width: 100%; */
+      width: 0%;
     }
 
     &::after {
       height: 100%;
+      width: 100%;
       background-color: var(--dark-green);
       z-index: -2;
     }
 
     &::before {
       height: 0%;
+      width: 0%;
       background-color: var(--light-green);
       transition: all 0.3s;
       z-index: -1;
@@ -49,6 +53,7 @@ const greenButton = css`
 
       &::before {
         height: 100%;
+        width: 100%;
       }
     }
   }

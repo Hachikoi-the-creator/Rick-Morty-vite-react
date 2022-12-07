@@ -54,7 +54,7 @@ const SearchComponent = styled.div`
 
     input,
     button {
-      border-radius: 7px;
+      border-radius: var(--normal-radius);
     }
 
     input {

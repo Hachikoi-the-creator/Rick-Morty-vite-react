@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { SearchComponent, Header } from "./styled/SearchBarStyles";
-import { searchHandler, addRndCharacter } from "../utils/handlers";
+import { searchHandler, addRndCharacter } from "../utils/fetchHandlers";
 
 export default function SearchBar(props) {
   const { data, setData } = props;

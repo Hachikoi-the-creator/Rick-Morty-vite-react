@@ -1,6 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-// import CardsList from "./components/CardsList";
-// import SearchBar from "./components/SearchBar";
 import CardDetails from "./routes/CardDetails";
 import Login from "./routes/Login";
 import Home from "./routes/Home";

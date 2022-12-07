@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { greenButton } from "./Mixins";
 
-const FormWrapper = styled.div`
+const FormWrapper = styled.form`
   width: 80vw;
   margin: 0 auto;
   background: linear-gradient(220deg, var(--grad-purple), var(--grad-blue));
   margin-top: 2rem;
-  border-radius: 7px;
+  border-radius: var(--normal-radius);
   padding: 2rem;
   color: white;
 `;
@@ -34,7 +34,7 @@ const InputWrapper = styled.div`
 
     &__span {
       background-color: transparent;
-      border-radius: 7px;
+      border-radius: var(--normal-radius);
       position: absolute;
       left: 3px;
       top: -3px;
@@ -48,6 +48,12 @@ const InputWrapper = styled.div`
       line-height: 1.2;
     }
 
+    /* error handling */
+    &__field.invalid-input {
+      border: 3px solid red;
+      background-color: #ff000087;
+    }
+
     &__field {
       box-sizing: border-box;
       display: block;
@@ -56,7 +62,7 @@ const InputWrapper = styled.div`
       padding: calc(0.5rem * 1.5) 0.5rem;
       color: currentColor;
       background: transparent;
-      border-radius: 7px;
+      border-radius: var(--normal-radius);
 
       &:focus,
       &:not(:placeholder-shown) {

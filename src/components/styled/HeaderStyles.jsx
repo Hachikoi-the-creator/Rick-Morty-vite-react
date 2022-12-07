@@ -33,6 +33,7 @@ const Navbar = styled.ul`
     cursor: pointer;
     border: none;
     border-bottom: 2px solid var(--light-green);
+    border-left: 2px solid var(--light-green);
     display: inline-block;
     padding: 0.5rem;
     transition: all 0.3s;
@@ -43,10 +44,10 @@ const Navbar = styled.ul`
     &::after,
     &::before {
       content: "";
-
       position: absolute;
       bottom: 0;
       left: 0;
+      height: 100%;
       width: 100%;
     }
 
@@ -57,6 +58,7 @@ const Navbar = styled.ul`
     }
 
     &::before {
+      width: 0%;
       height: 0%;
       background-color: var(--light-green);
       transition: all 0.3s;
@@ -69,6 +71,7 @@ const Navbar = styled.ul`
 
       &::before {
         height: 100%;
+        width: 100%;
       }
     }
   }

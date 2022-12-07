@@ -19,12 +19,7 @@ export default function ExtraCharaInfo(props) {
     gender,
     episode: episodesAppeareances,
   } = props.chara;
-  // console.log(origin);
 
-  // console.log(episodesAppeareances.length);
-  console.log(props.chara);
-
-  // console.log(locationType, locationName);
   return (
     <Wrapper>
       <InnerContainer>

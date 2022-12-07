@@ -3,8 +3,9 @@ import { InputWrapper } from "./styled/FormsStyles";
 import { validate } from "../utils/fromHandlers";
 
 export default function InputComp(props) {
-  const { type, name, label, setInputStates } = props;
+  const { type, name, label, setInputStates, inputStates } = props;
   const inputRef = useRef(null);
+  const styleValid = inputStates[`${name}Valid`];
 
   const updateState = () => {
     const invalidKey = `${name}Valid`;
@@ -24,7 +25,7 @@ export default function InputComp(props) {
     <InputWrapper>
       <label className="label">
         <input
-          className="label__field"
+          className={`label__field  ${!styleValid && "invalid-input"}`}
           type={type}
           name={name}
           placeholder=" "
@@ -32,6 +33,7 @@ export default function InputComp(props) {
           onBlur={updateState}
         />
         <span className="label__span">{label}</span>
+        {!styleValid && <span className="error__span"></span>}
       </label>
     </InputWrapper>
   );
