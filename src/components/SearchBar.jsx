@@ -1,9 +1,8 @@
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { fetchOneCharacter } from "../redux/actions";
+import { fetchOneCharacter, fetchRandomCharacter } from "../redux/actions";
 import { SearchComponent, Header } from "./styled/SearchBarStyles";
 import { InputWrapper } from "./styled/FormsStyles";
-import { searchHandler, addRndCharacter } from "../utils/fetchHandlers";
 
 export default function SearchBar(props) {
   const { data, setData } = props;
@@ -39,6 +38,10 @@ export default function SearchBar(props) {
     dispatcher(fetchOneCharacter(searchInput.current.value));
   };
 
+  const rndBtnHandler = () => {
+    dispatcher(fetchRandomCharacter());
+  };
+
   return (
     <>
       <Header>
@@ -64,9 +67,7 @@ export default function SearchBar(props) {
           </InputWrapper>
 
           <button onClick={addBtnClickHandler}>Agregar</button>
-          <button onClick={() => addRndCharacter(data, setData)}>
-            Add random
-          </button>
+          <button onClick={rndBtnHandler}>Add random</button>
         </div>
       </SearchComponent>
     </>

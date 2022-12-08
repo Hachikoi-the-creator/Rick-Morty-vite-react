@@ -1,5 +1,8 @@
+import { getTotalChara } from "../utils/axiosHandlers";
+
 export const FETCH_DEFAULT_CHARACTERS = "FETCH_DEFAULT_CHARACTERS";
 export const FETCH_ONE_CHARACTER = "FETCH_ONE_CHARACTER";
+export const FETCH_ONE_RANDOM = "FETCH_ONE_RANDOM";
 // helpter to know when the state has been updated, more fuency, less rendering problems
 export const UPDATE_LOADING = "UPDATE_LOADING";
 // x button in main page
@@ -40,6 +43,26 @@ export function fetchOneCharacter(charaName) {
         dispatch({ type: FETCH_ONE_CHARACTER, payload: data.results });
         dispatch(updateLoading());
       });
+  };
+}
+
+// * FETCH_ONE_RANDOM, uses an util to make anothe api call and get the totall amount of characters in the API
+export function fetchRandomCharacter() {
+  return function (dispatch) {
+    dispatch(updateLoading());
+
+    getTotalChara().then((totalCharaNum) => {
+      const rndInt = Math.floor(Math.random() * totalCharaNum) + 1;
+
+      fetch(`https://rickandmortyapi.com/api/character/${rndInt}`)
+        .then((data) => data.json())
+        .then((res) => {
+          const updatedChara = { ...res, isFav: false };
+
+          dispatch({ type: FETCH_ONE_RANDOM, payload: updatedChara });
+          dispatch(updateLoading());
+        });
+    });
   };
 }
 

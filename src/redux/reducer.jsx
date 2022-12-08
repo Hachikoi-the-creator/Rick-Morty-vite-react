@@ -5,6 +5,7 @@ import {
   UPDATE_LOADING,
   REMOVE_ONE_CHARACTER,
   TOGGLE_ONE_FAVOURITE,
+  FETCH_ONE_RANDOM,
 } from "./actions";
 
 const initialState = {
@@ -95,6 +96,19 @@ export default (state = initialState, action) => {
       return {
         ...state,
       };
+    // * ------------------------------------------------------
+    case FETCH_ONE_RANDOM:
+      // if already is inside the current charaList, just return the past state, if not update
+      const radomCharaGot = action.payload;
+      const isRepeated = state.charaList.filter(
+        (e) => e.id === radomCharaGot.id
+      );
+      const updatedStateRandom = [...state.charaList, radomCharaGot];
+
+      return isRepeated.length
+        ? { ...state }
+        : { ...state, charaList: updatedStateRandom };
+
     // * ------------------------------------------------------
     default:
       return { ...state };
