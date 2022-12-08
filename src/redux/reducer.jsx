@@ -30,35 +30,39 @@ export default (state = initialState, action) => {
       };
     // * ------------------------------------------------------
     case TOGGLE_ONE_FAVOURITE:
+      let updatedSelectedChara;
+      let laggedChara;
+
       // *update state.charaList[id] isFav to true(the opposite later on)
       const updatedToggleState = state.charaList.map((e) => {
         if (e.id === action.payload) {
-          console.log("before change", e);
-          const res = { ...e, isFav: !e.isFav };
-          console.log("AFTERchange", res);
-          return res;
+          updatedSelectedChara = { ...e, isFav: !e.isFav };
+          laggedChara = e;
+          return updatedSelectedChara;
         }
         return e;
       });
+
+      // *add favourite character to state.myFavourites
+      let updatedFavourites = [];
+      if (laggedChara.isFav) {
+        // was favourite before being changed? if so, remove it from state
+        updatedFavourites = state.myFavourites.filter(
+          (e) => e.id !== laggedChara.id
+        );
+      }
+      // add new favourite to state, if it's new
+      else {
+        updatedFavourites = [...state.myFavourites, updatedSelectedChara];
+        console.log("ADDED IT", updatedFavourites);
+      }
+
       return {
         ...state,
         charaList: updatedToggleState,
+        myFavourites: updatedFavourites,
       };
-    // *add favourite character to state.myFavourites
-    // const favChara = state.charaList.find((e) => e.id === action.payload);
-    // const isRepeated = state.myFavourites.filter(
-    //   (e) => e.id === action.payload
-    // );
-    // // console.log("rep", isRepeated, favChara);
-    // const updatedFavList = [...state.myFavourites, favChara];
-    // console.log(updatedFavList);
 
-    // return isRepeated.length
-    //   ? {
-    //       ...state,
-    //       myFavourites: updatedFavList,
-    //     }
-    //   : { ...state };
     // * ------------------------------------------------------
     case REMOVE_ONE_CHARACTER:
       const updatedState = state.charaList.filter(
@@ -69,22 +73,6 @@ export default (state = initialState, action) => {
         ...state,
         charaList: updatedState,
       };
-    // * ------------------------------------------------------
-    // case UPDATE_FAVOURITES:
-    //   const updatedCharaState = state.charaList.map((e) => {
-    //     if (e.id === action.payload) {
-    //       // console.log("before change", e);
-    //       const res = { ...e, isFav: !e.isFav };
-    //       // console.log("AFTERchange", res);
-    //       return res;
-    //     }
-    //     return e;
-    //   });
-
-    // return {
-    //   ...state,
-    //   charaList: updatedCharaState,
-    // };
     // * ------------------------------------------------------
     default:
       return { ...state };
