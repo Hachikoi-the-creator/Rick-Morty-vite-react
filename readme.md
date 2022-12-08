@@ -6,6 +6,7 @@
 - remove the X button when card renders in favourites
 
 # Done
+- Updated thumbnail 
 - login form is way too wide in fullscreen
 - unknown status is to opaque
 - dead status is not as bright as alive status bar
