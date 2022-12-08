@@ -33,7 +33,7 @@ export default (state = initialState, action) => {
       let updatedSelectedChara;
       let laggedChara;
 
-      // *update state.charaList[id] isFav to true(the opposite later on)
+      //? update state.charaList[id] isFav to true(the opposite later on)
       const updatedToggleState = state.charaList.map((e) => {
         if (e.id === action.payload) {
           updatedSelectedChara = { ...e, isFav: !e.isFav };
@@ -43,7 +43,7 @@ export default (state = initialState, action) => {
         return e;
       });
 
-      // *add favourite character to state.myFavourites
+      //? add favourite character to state.myFavourites
       let updatedFavourites = [];
       if (laggedChara.isFav) {
         // was favourite before being changed? if so, remove it from state
@@ -51,10 +51,10 @@ export default (state = initialState, action) => {
           (e) => e.id !== laggedChara.id
         );
       }
+
       // add new favourite to state, if it's new
       else {
         updatedFavourites = [...state.myFavourites, updatedSelectedChara];
-        console.log("ADDED IT", updatedFavourites);
       }
 
       return {

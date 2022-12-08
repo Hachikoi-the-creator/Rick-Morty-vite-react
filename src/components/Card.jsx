@@ -43,7 +43,8 @@ export default function Card(props) {
 
       <NameStatusWrapper>
         <NameSpan>{name}</NameSpan>
-        <AliveStatusBar isAlive={status}></AliveStatusBar>
+        {/* kinda too much in the little cards */}
+        {/* <AliveStatusBar isAlive={status}></AliveStatusBar> */}
       </NameStatusWrapper>
 
       <DetailsWrapper>

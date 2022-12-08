@@ -41,9 +41,9 @@ function returnStatusColor({ status }) {
     case "Alive":
       return "#15ff5bdb";
     case "unknown":
-      return "#0000006a";
+      return "#5a5a5ac1";
     default:
-      return "#ff46464e";
+      return "#b72222ce";
   }
 }
 

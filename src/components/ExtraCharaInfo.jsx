@@ -1,5 +1,3 @@
-import { useState } from "react";
-import IncompleteDetails from "./IncompleteDetails";
 import {
   ImageWrapper,
   InnerContainer,
@@ -9,15 +7,6 @@ import {
 } from "./styled/ExtraCharaInfoStyles";
 
 export default function ExtraCharaInfo(props) {
-  // if (!props.chara) return <IncompleteDetails />;
-  // props.missingInfo
-  if (props.missingInfo) {
-    // setHasFullInfo(false);
-    console.log("REDACTED");
-  } else {
-    console.log("POGGERS");
-  }
-
   const {
     status,
     species,

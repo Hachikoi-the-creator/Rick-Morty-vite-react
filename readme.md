@@ -1,11 +1,11 @@
 # [Live Deployment](https://rick-morty-vite-react.vercel.app/)
 
 # todo:
-- and a new route where it shows their favourite characters
-- Make work the thingy were the state doesn't change once we change routes
-
+- make the add one chara work again kek
 
 # Done
+- and a new route where it shows their favourite characters
+- Make work the thingy were the state doesn't change once we change routes
 - add redux to the whole app and maage the state there
 - Once the global state is running, be sure to fix the removing characters on load behaivour
 - add favourite option

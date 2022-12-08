@@ -20,7 +20,7 @@ export function updateLoading() {
 export function fetchDefaultCharacters() {
   return function (dispatch) {
     dispatch(updateLoading());
-    fetch(`https://rickandmortyapi.com/api/character/[7,8,9]`)
+    fetch(`https://rickandmortyapi.com/api/character/[1,7,8,9]`)
       .then((response) => response.json())
       .then((data) => {
         // add isFav propierty to everyone, to later keep track of who has beena dded to favourites
