@@ -1,9 +1,15 @@
 # [Live Deployment](https://rick-morty-vite-react.vercel.app/)
 
 # todo:
-- make the add one chara work again kek
+- login form is way too wide in fullscreen
+- unknown status is to opaque
+- dead status is not as bright as alive status bar
+- status bar is way too close to chara picture
+
 
 # Done
+- make the add one chara work again 
+- Random chara ddition working whit redux now
 - and a new route where it shows their favourite characters
 - Make work the thingy were the state doesn't change once we change routes
 - add redux to the whole app and maage the state there

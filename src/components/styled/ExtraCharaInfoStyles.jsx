@@ -31,19 +31,20 @@ const StatusDiv = styled.div`
   width: 300px;
   height: 1rem;
   border-radius: 1.5rem;
-  margin: 1rem auto;
+  margin: 1.2rem auto 1.6rem auto;
   background-color: ${(props) => returnStatusColor(props)};
-  box-shadow: ${(props) => `1px 0px 12px 5px${returnStatusColor(props)}`};
+  box-shadow: ${(props) =>
+    `1px 0px 12px 5px ${returnStatusColor(props, true)}`};
 `;
 
-function returnStatusColor({ status }) {
+function returnStatusColor({ status }, isShadow = false) {
   switch (status) {
     case "Alive":
       return "#15ff5bdb";
     case "unknown":
-      return "#5a5a5ac1";
+      return isShadow ? "#afafaf" : "#3b3b3b";
     default:
-      return "#b72222ce";
+      return isShadow ? "#ff2424" : "#b90404";
   }
 }
 

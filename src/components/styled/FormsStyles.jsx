@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { greenButton } from "./Mixins";
 
 const FormWrapper = styled.form`
-  width: 80vw;
+  min-width: 350px;
+  width: 60vw;
   margin: 0 auto;
   background: linear-gradient(220deg, var(--grad-purple), var(--grad-blue));
   margin-top: 2rem;

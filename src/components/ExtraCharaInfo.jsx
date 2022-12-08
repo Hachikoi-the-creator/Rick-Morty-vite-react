@@ -29,7 +29,7 @@ export default function ExtraCharaInfo(props) {
 
         <InfoWrapper>
           <div className="left">
-            <p className="after">{gender}</p>
+            <p className="after">Gender: {gender}</p>
             <span className="rndSpan"></span>
             <div className="after">
               Appears in {episodesAppeareances.length} Episodes
@@ -37,7 +37,7 @@ export default function ExtraCharaInfo(props) {
           </div>
 
           <div className="right">
-            <p>{species}</p>
+            <p>Specie: {species}</p>
             <span className="rndSpan"></span>
             <div>
               <p>Lives in:</p>
