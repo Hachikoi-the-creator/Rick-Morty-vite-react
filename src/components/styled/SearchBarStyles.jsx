@@ -54,18 +54,25 @@ const SearchComponent = styled.div`
     background-color: rgb(62 4 0 / 63%);
   }
 
+  @media (max-width: 600px) {
+    > div {
+      margin: 3rem auto;
+    }
+  }
+
   > div {
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 0.7rem;
-    width: 60%;
-    max-width: 450px;
-    margin: 0 auto;
+    width: 40%;
+    min-width: 350px;
+    margin: 1rem auto 3rem auto;
     background: linear-gradient(220deg, var(--grad-purple), var(--grad-blue));
     padding: 5% 7%;
     border-radius: 13px;
     border: 3px solid yellowgreen;
+    /* background-color: antiquewhite; */
 
     input,
     button {
