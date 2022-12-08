@@ -1,22 +1,14 @@
 import Card from "./Card";
 import { Wrapper } from "./styled/CardsListStyles";
+import { useSelector } from "react-redux";
 
-export default function CardsList(props) {
-  const { data, setData } = props;
-
-  const closeHandler = (id) => {
-    setData((prev) => {
-      const removed = prev.filter((e) => e.id !== id);
-      return removed;
-    });
-  };
-
+export default function CardsList({ charaData }) {
   // Object[name, gender, ...etc]
   return (
     <>
       <Wrapper>
-        {data.map((e) => (
-          <Card key={e.id} chara={e} {...{ closeHandler }} />
+        {charaData.map((e) => (
+          <Card key={e.id} chara={e} />
         ))}
       </Wrapper>
     </>

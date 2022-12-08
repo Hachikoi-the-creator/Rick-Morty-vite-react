@@ -1,25 +1,21 @@
-import { useEffect, useState } from "react";
 import SearchBar from "../components/SearchBar";
 import CardsList from "../components/CardsList";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchDefaultCharacters } from "../redux/actions";
 
 export default function Home() {
-  const [data, setData] = useState([]);
+  const charaData = useSelector((data) => data.charaList);
+  const dispatcher = useDispatch();
 
   useEffect(() => {
-    if (!data[0]) {
-      fetch("https://rickandmortyapi.com/api/character/[7,8,9]")
-        .then((res) => res.json())
-        .then((res) => {
-          if (!data.length) setData(res);
-        });
-    }
+    dispatcher(fetchDefaultCharacters());
   }, []);
 
   return (
     <>
-      <SearchBar {...{ data }} {...{ setData }} />
-      <CardsList {...{ data }} {...{ setData }} />
+      <SearchBar />
+      <CardsList {...{ charaData }} />
     </>
   );
 }

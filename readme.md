@@ -1,13 +1,14 @@
 # [Live Deployment](https://rick-morty-vite-react.vercel.app/)
 
 # todo:
-- add redux to the whole app and maage the state there
-- Once the global state is running, be sure to fix the removing characters on load behaivour
-- add favourite option
 - and a new route where it shows their favourite characters
+- Make work the thingy were the state doesn't change once we change routes
 
 
 # Done
+- add redux to the whole app and maage the state there
+- Once the global state is running, be sure to fix the removing characters on load behaivour
+- add favourite option
 - add a better looking navbar icons (svgs)
 - Found how to use variables (Global styles) so all colors and default border radius change it for variables
 - add a loading state to card component, and fetch the extra info there, if after the info was fetched there still was no new change, show the missing info component
@@ -39,6 +40,7 @@
 
 ## Extra stuff
 - [redux store devtools problem](https://github.com/jhen0409/react-native-debugger/issues/280)
+- $ git merge BRANCH - Adds the changes in BRANCH to your current branch (dev) 
 
 
 ## Old redux installation

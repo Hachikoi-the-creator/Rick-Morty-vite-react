@@ -34,6 +34,7 @@ const NavbarWrapper = styled.ul`
   }
 
   a {
+    color: black;
     img {
       width: 4rem;
     }

@@ -10,21 +10,25 @@ const s = {
 
 export default function Test() {
   const dispatcher = useDispatch();
-  const num = useSelector((state) => state.count);
-  const charas = useSelector((state) => state.charas);
+  const loading = useSelector((state) => state.loading);
+  const charas = useSelector((state) => state.charaList);
 
   useEffect(() => {
     dispatcher(fetchDefaultCharacters());
-    console.log("got charas succesfully :D", charas);
   }, []);
+
+  if (loading) {
+    return <h1>SEND HELP</h1>;
+  }
 
   return (
     <div style={s}>
       <h1>test</h1>
-      <p>{num}</p>
-      {charas.map((e) => {
-        <p key={e.id}>{e.name}</p>;
-      })}
+      <p>Charas below?</p>
+
+      {charas.map((e) => (
+        <p key={e.id}>{e.name}</p>
+      ))}
     </div>
   );
 }

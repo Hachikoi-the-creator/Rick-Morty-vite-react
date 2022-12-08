@@ -1,28 +1,25 @@
 import { Link } from "react-router-dom";
 import { NavbarWrapper } from "./styled/NavbarStyles.jsx";
 
+const linksMappingArray = [
+  { desc: "Home", to: "/" },
+  { desc: "Contact", to: "/contact" },
+  { desc: "Favourites", to: "/favourites" },
+  { desc: "Login", to: "/login" },
+];
+
 export default function Navbar() {
   return (
     <>
       <NavbarWrapper>
-        <li>
-          <span className="hidden">Home</span>
-          <Link to={"/"}>
-            <img src="/home.svg" alt="home link" />
-          </Link>
-        </li>
-        <li>
-          <span className="hidden">Contact</span>
-          <Link to={"/contact"}>
-            <img src="/contact.svg" alt="contact link" />
-          </Link>
-        </li>
-        <li>
-          <span className="hidden">Login</span>
-          <Link to={"/login"}>
-            <img src="/login.svg" alt="login link" />
-          </Link>
-        </li>
+        {linksMappingArray.map((e) => (
+          <li key={e.desc}>
+            <Link to={e.to}>
+              <span className="hidden">{e.desc.slice(0, 8)}</span>
+              <img src={`/${e.desc.toLowerCase()}.svg`} alt="home link" />
+            </Link>
+          </li>
+        ))}
       </NavbarWrapper>
     </>
   );

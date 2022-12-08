@@ -27,6 +27,25 @@ const CardContainer = styled.div`
       scale: 1.06;
     }
   }
+
+  .fav-svg {
+    width: 2rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #51ff517d;
+
+    &:hover {
+      /* add box shadow pretty dim */
+      background-color: #ff69b490;
+      -webkit-box-shadow: 7px 7px 23px 5px rgb(255 194 194);
+      -moz-box-shadow: 7px 7px 23px 5px rgb(255 194 194);
+      box-shadow: 7px 7px 23px 5px rgb(255 194 194);
+    }
+  }
 `;
 
 const CloseBtn = styled.button`

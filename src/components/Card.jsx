@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
   CardContainer,
   CloseBtn,
@@ -7,15 +6,39 @@ import {
   DetailsWrapper,
   NameStatusWrapper,
 } from "./styled/CardStyles";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { removeOneCharacter, toggleOneFavourite } from "../redux/actions";
 
 export default function Card(props) {
-  const { name, species, gender, image, status, id } = props.chara;
+  const { name, species, gender, image, status, id, isFav } = props.chara;
   const bgStyle = { backgroundImage: `url(${image})` };
+  const dispatcher = useDispatch();
+
+  const closeHandler = () => {
+    // console.log("Clossing ", id);
+    dispatcher(removeOneCharacter(id));
+  };
+
+  const imgClickHandler = (e) => {
+    e.target.src = "/filled-heart.svg";
+    // console.log(id);
+    // add them to the favourite global state
+    dispatcher(toggleOneFavourite(id));
+    // update the global state isFav prop
+    // dispatcher(updateFavourites(id));
+  };
 
   return (
     <CardContainer>
-      <CloseBtn onClick={() => props.closeHandler(id)}>X</CloseBtn>
-      {/* <ImageBg imgSrc={image}></ImageBg> */}
+      <CloseBtn onClick={closeHandler}>X</CloseBtn>
+      <img
+        className="fav-svg"
+        src={isFav ? "/filled-heart.svg" : "/empty-heart.svg"}
+        alt="empty heart, meaning it's not in favourites"
+        onClick={imgClickHandler}
+      />
+
       <Link to={`/character/${id}`} style={bgStyle}></Link>
 
       <NameStatusWrapper>
