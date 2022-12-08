@@ -4,8 +4,7 @@ import { fetchOneCharacter, fetchRandomCharacter } from "../redux/actions";
 import { SearchComponent, Header } from "./styled/SearchBarStyles";
 import { InputWrapper } from "./styled/FormsStyles";
 
-export default function SearchBar(props) {
-  const { data, setData } = props;
+export default function SearchBar() {
   const [validInput, setValidInput] = useState(true);
   const searchInput = useRef("");
   const dispatcher = useDispatch();
@@ -29,7 +28,15 @@ export default function SearchBar(props) {
     }
   };
 
+  // todo: change these logs for a modal
   const addBtnClickHandler = () => {
+    // avoid adding one w/empty field on load
+    if (!searchInput.current.value) {
+      console.log("not valid input, baka, not send empty field, plx");
+      setValidInput(false);
+      return;
+    }
+
     if (!validInput) {
       console.log("not valid input, baka");
       return;

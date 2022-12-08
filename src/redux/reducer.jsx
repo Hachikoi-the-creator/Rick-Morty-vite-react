@@ -82,7 +82,6 @@ export default (state = initialState, action) => {
 
       for (let i = 0; i < action.payload.length; i++) {
         const currChara = action.payload[i];
-        console.log(currChara);
         // new  chara
         if (!idsAlreadyHave.includes(currChara.id)) {
           const fetchOneUpdatedCharaList = [...state.charaList, currChara];

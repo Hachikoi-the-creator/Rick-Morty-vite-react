@@ -1,13 +1,15 @@
 # [Live Deployment](https://rick-morty-vite-react.vercel.app/)
 
 # todo:
+- change console logs, in SearchBar.jsx for a modal, that shows the error :D
+- move all the reducer TICC logic to utils
+- remove the X button when card renders in favourites
+
+# Done
 - login form is way too wide in fullscreen
 - unknown status is to opaque
 - dead status is not as bright as alive status bar
 - status bar is way too close to chara picture
-
-
-# Done
 - make the add one chara work again 
 - Random chara ddition working whit redux now
 - and a new route where it shows their favourite characters
@@ -51,6 +53,3 @@
 
 ## Old redux installation
 npm i redux@4.2.0 react-redux@^8.0.2 redux-thunk@^2.4.1
-
-**Extra delay on card details is because I make another API call everytime I enter that component, to fetch extra info about that character**
-
