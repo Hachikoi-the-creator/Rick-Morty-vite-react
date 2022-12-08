@@ -1,21 +1,3 @@
-export function searchHandler(ref, dataState, stateModifier, inputIsValid) {
-  if (!inputIsValid) return false;
-
-  const charaName = ref.current.value;
-
-  // check if the name has spaces, if so show an error
-  if (!charaName.includes(" ")) {
-    fetch(`https://rickandmortyapi.com/api/character/?name=${charaName}`)
-      .then((data) => data.json())
-      .then((res) => {
-        return checkNoRepeatAndUpdate(dataState, stateModifier, res);
-      });
-  }
-
-  console.log("Cannot search whit spaces, only include one name");
-  return false;
-}
-
 export function addRndCharacter(dataState, stateModifier) {
   getTotalChara().then((totalCharaNum) => {
     console.log("inside then", totalCharaNum);

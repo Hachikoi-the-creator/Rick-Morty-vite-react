@@ -1,4 +1,6 @@
 import { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { fetchOneCharacter } from "../redux/actions";
 import { SearchComponent, Header } from "./styled/SearchBarStyles";
 import { InputWrapper } from "./styled/FormsStyles";
 import { searchHandler, addRndCharacter } from "../utils/fetchHandlers";
@@ -7,17 +9,16 @@ export default function SearchBar(props) {
   const { data, setData } = props;
   const [validInput, setValidInput] = useState(true);
   const searchInput = useRef("");
+  const dispatcher = useDispatch();
 
   const inputBlurHandler = () => {
-    // verify the ref value is not a number, if it is, stop the on click event, show an alert & change styles of input
+    // verify the ref value is not a number, if it is, stop the onClick event, show an alert & change styles of input
     const value = searchInput.current.value;
 
     // if it's not a number I bet is a string
     if (isNaN(+value)) {
       // check if the string only has one name (no spaces)
-      const validNameRegex = /^[a-z0-9]+$/gi;
-
-      validNameRegex.test(value) && setValidInput(true);
+      !value.includes(" ") && setValidInput(true);
     }
     // must be a number then
     else {
@@ -27,6 +28,15 @@ export default function SearchBar(props) {
         "- Invalid input, write down the name of the caracter instead \n - Input no es valido, ingresa el nombre del personaje"
       );
     }
+  };
+
+  const addBtnClickHandler = () => {
+    if (!validInput) {
+      console.log("not valid input, baka");
+      return;
+    }
+
+    dispatcher(fetchOneCharacter(searchInput.current.value));
   };
 
   return (
@@ -53,13 +63,7 @@ export default function SearchBar(props) {
             </label>
           </InputWrapper>
 
-          <button
-            onClick={() =>
-              searchHandler(searchInput, data, setData, validInput)
-            }
-          >
-            Agregar
-          </button>
+          <button onClick={addBtnClickHandler}>Agregar</button>
           <button onClick={() => addRndCharacter(data, setData)}>
             Add random
           </button>

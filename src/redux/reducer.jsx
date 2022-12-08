@@ -73,6 +73,28 @@ export default (state = initialState, action) => {
         ...state,
         charaList: updatedState,
       };
+
+    case FETCH_ONE_CHARACTER:
+      // check if the received chara is not already in the state, if so, return past state, whit no changes
+      // ? makes easier to check if I already have that character
+      const idsAlreadyHave = state.charaList.map((e) => e.id);
+
+      for (let i = 0; i < action.payload.length; i++) {
+        const currChara = action.payload[i];
+        console.log(currChara);
+        // new  chara
+        if (!idsAlreadyHave.includes(currChara.id)) {
+          const fetchOneUpdatedCharaList = [...state.charaList, currChara];
+
+          return { ...state, charaList: fetchOneUpdatedCharaList };
+        }
+      }
+
+      // if I could not find a new rick
+      console.log("Already have all the characters whit that name O:");
+      return {
+        ...state,
+      };
     // * ------------------------------------------------------
     default:
       return { ...state };
