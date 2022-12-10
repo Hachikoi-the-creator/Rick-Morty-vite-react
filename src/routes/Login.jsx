@@ -5,7 +5,7 @@ import {
   ButtonGroup,
   FormWrapper,
 } from "../components/styled/FormsStyles";
-import { validate } from "../utils/fromHandlers";
+import { validate } from "../utils/formHandlers";
 import { useNavigate } from "react-router-dom";
 
 // variable to map over and create all inputs easily
@@ -65,7 +65,7 @@ export default function Login() {
     <>
       <FormWrapper onSubmit={submitHandler}>
         <FormTitle>
-          <img src="/ufo.png" alt="litle red ufo icon" />
+          <img src="/img/ufo.png" alt="litle red ufo icon" />
           <h2>Login</h2>
         </FormTitle>
 

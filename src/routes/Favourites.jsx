@@ -11,7 +11,7 @@ export default function Favourites() {
       <IncompleteWrapper>
         <h2>You have not selected any favourite character</h2>
         <img
-          src="/look-not-favs.jpg"
+          src="/img/look-not-favs.jpg"
           alt="Even whit both eyes wide open I can't see any favourite character"
         />
       </IncompleteWrapper>
@@ -19,7 +19,7 @@ export default function Favourites() {
 
   return (
     <>
-      <CardsList {...{ charaData }} />
+      <CardsList {...{ charaData }} canRemove={false} />
     </>
   );
 }

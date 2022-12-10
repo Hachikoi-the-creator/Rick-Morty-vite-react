@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { InputWrapper } from "./styled/FormsStyles";
-import { validate } from "../utils/fromHandlers";
+import { validate } from "../utils/formHandlers";
 
 export default function InputComp(props) {
   const { type, name, label, setInputStates, inputStates } = props;

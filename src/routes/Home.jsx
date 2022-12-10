@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <SearchBar />
-      <CardsList {...{ charaData }} />
+      <CardsList {...{ charaData }} canRemove={true} />
     </>
   );
 }

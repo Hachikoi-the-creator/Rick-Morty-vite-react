@@ -23,7 +23,7 @@ export default function CardDetails() {
   if (loading)
     return (
       <IncompleteWrapper>
-        <img src="/loading.svg" alt="dotted loading spinner" />
+        <img src="/svg/loading.svg" alt="dotted loading spinner" />
       </IncompleteWrapper>
     );
 

@@ -53,7 +53,7 @@ export default function SearchBar() {
     <>
       <Header>
         <h1>
-          <img src="/rick-title.png" alt="animated title of rick&morty" />
+          <img src="/img/rick-title.png" alt="animated title of rick&morty" />
         </h1>
       </Header>
       <SearchComponent>

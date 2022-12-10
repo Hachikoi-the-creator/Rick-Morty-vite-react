@@ -16,7 +16,7 @@ export default function Navbar() {
           <li key={e.desc}>
             <Link to={e.to}>
               <span className="hidden">{e.desc.slice(0, 8)}</span>
-              <img src={`/${e.desc.toLowerCase()}.svg`} alt="home link" />
+              <img src={`/svg/${e.desc.toLowerCase()}.svg`} alt="home link" />
             </Link>
           </li>
         ))}

@@ -1,7 +1,6 @@
 import {
   CardContainer,
   CloseBtn,
-  AliveStatusBar,
   NameSpan,
   DetailsWrapper,
   NameStatusWrapper,
@@ -11,30 +10,24 @@ import { useDispatch } from "react-redux";
 import { removeOneCharacter, toggleOneFavourite } from "../redux/actions";
 
 export default function Card(props) {
-  const { name, species, gender, image, status, id, isFav } = props.chara;
+  const { name, species, gender, image, id, isFav } = props.chara;
   const bgStyle = { backgroundImage: `url(${image})` };
   const dispatcher = useDispatch();
 
   const closeHandler = () => {
-    // console.log("Clossing ", id);
     dispatcher(removeOneCharacter(id));
   };
 
   const imgClickHandler = (e) => {
-    e.target.src = "/filled-heart.svg";
-    // console.log(id);
-    // add them to the favourite global state
     dispatcher(toggleOneFavourite(id));
-    // update the global state isFav prop
-    // dispatcher(updateFavourites(id));
   };
 
   return (
     <CardContainer>
-      <CloseBtn onClick={closeHandler}>X</CloseBtn>
+      {props.canRemove && <CloseBtn onClick={closeHandler}>X</CloseBtn>}
       <img
         className="fav-svg"
-        src={isFav ? "/filled-heart.svg" : "/empty-heart.svg"}
+        src={isFav ? "/svg/filled-heart.svg" : "/svg/empty-heart.svg"}
         alt="empty heart, meaning it's not in favourites"
         onClick={imgClickHandler}
       />
@@ -43,8 +36,6 @@ export default function Card(props) {
 
       <NameStatusWrapper>
         <NameSpan>{name}</NameSpan>
-        {/* kinda too much in the little cards */}
-        {/* <AliveStatusBar isAlive={status}></AliveStatusBar> */}
       </NameStatusWrapper>
 
       <DetailsWrapper>

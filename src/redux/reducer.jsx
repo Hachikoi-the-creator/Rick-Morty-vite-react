@@ -7,6 +7,11 @@ import {
   TOGGLE_ONE_FAVOURITE,
   FETCH_ONE_RANDOM,
 } from "./actions";
+// helpers imports
+import {
+  toggleOneFavouriteHelper,
+  fetchNewCharacterHelper,
+} from "../utils/reduxReducerHelper";
 
 const initialState = {
   loading: false,
@@ -31,32 +36,10 @@ export default (state = initialState, action) => {
       };
     // * ------------------------------------------------------
     case TOGGLE_ONE_FAVOURITE:
-      let updatedSelectedChara;
-      let laggedChara;
-
-      //? update state.charaList[id] isFav to true(the opposite later on)
-      const updatedToggleState = state.charaList.map((e) => {
-        if (e.id === action.payload) {
-          updatedSelectedChara = { ...e, isFav: !e.isFav };
-          laggedChara = e;
-          return updatedSelectedChara;
-        }
-        return e;
-      });
-
-      //? add favourite character to state.myFavourites
-      let updatedFavourites = [];
-      if (laggedChara.isFav) {
-        // was favourite before being changed? if so, remove it from state
-        updatedFavourites = state.myFavourites.filter(
-          (e) => e.id !== laggedChara.id
-        );
-      }
-
-      // add new favourite to state, if it's new
-      else {
-        updatedFavourites = [...state.myFavourites, updatedSelectedChara];
-      }
+      const [updatedToggleState, updatedFavourites] = toggleOneFavouriteHelper(
+        state,
+        action
+      );
 
       return {
         ...state,
@@ -75,26 +58,19 @@ export default (state = initialState, action) => {
         charaList: updatedState,
       };
 
+    // * ------------------------------------------------------
     case FETCH_ONE_CHARACTER:
-      // check if the received chara is not already in the state, if so, return past state, whit no changes
-      // ? makes easier to check if I already have that character
-      const idsAlreadyHave = state.charaList.map((e) => e.id);
+      const [didFoundNew, updatedCharaList] = fetchNewCharacterHelper(
+        state,
+        action
+      );
 
-      for (let i = 0; i < action.payload.length; i++) {
-        const currChara = action.payload[i];
-        // new  chara
-        if (!idsAlreadyHave.includes(currChara.id)) {
-          const fetchOneUpdatedCharaList = [...state.charaList, currChara];
-
-          return { ...state, charaList: fetchOneUpdatedCharaList };
-        }
-      }
-
-      // if I could not find a new rick
-      console.log("Already have all the characters whit that name O:");
-      return {
-        ...state,
-      };
+      return didFoundNew
+        ? {
+            ...state,
+            charaList: updatedCharaList,
+          }
+        : { ...state };
     // * ------------------------------------------------------
     case FETCH_ONE_RANDOM:
       // if already is inside the current charaList, just return the past state, if not update

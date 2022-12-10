@@ -2,11 +2,13 @@
 
 # todo:
 - change console logs, in SearchBar.jsx for a modal, that shows the error :D
-- move all the reducer TICC logic to utils
-- remove the X button when card renders in favourites
 
 # Done
-- Updated thumbnail 
+- move all the reducer TICC logic to utils
+- remove the X button when card renders in favourites
+- better dir management in publid dir (svg & imgs)
+- add custom 404 page
+- Updated thumbnail w
 - login form is way too wide in fullscreen
 - unknown status is to opaque
 - dead status is not as bright as alive status bar
