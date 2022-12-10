@@ -59,7 +59,41 @@ const greenButton = css`
   }
 `;
 
-const greenAchor = `
+const closeButton = css`
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  top: 0.7rem;
+  right: 0.3rem;
+  width: 4ch;
+  height: 4ch;
+  border-radius: 4ch;
+  background-color: rgb(186, 0, 0);
+  box-shadow: 1px 1px 26px 1px rgb(244 18 18);
 
+  &:hover {
+    transform: rotate(180deg);
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: closeButtonHover 2s ease-in-out infinite;
+  }
+
+  @keyframes closeButtonHover {
+    0% {
+      box-shadow: 1px 1px 26px 1px rgb(244 18 18);
+      /* -webkit-box-shadow: 1px 3px 27px 3px rgba(0, 0, 0, 0.48);
+      -moz-box-shadow: 1px 3px 27px 3px rgba(0, 0, 0, 0.48); */
+      scale: 0.9;
+    }
+    50% {
+      box-shadow: 1px 1px 26px 1px #ff2323;
+      scale: 1;
+    }
+    100% {
+      box-shadow: 1px 1px 26px 1px rgb(244 18 18);
+      scale: 0.9;
+    }
+  }
 `;
-export { greenButton };
+
+export { greenButton, closeButton };

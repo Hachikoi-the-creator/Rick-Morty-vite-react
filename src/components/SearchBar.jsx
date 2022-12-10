@@ -3,9 +3,11 @@ import { useDispatch } from "react-redux";
 import { fetchOneCharacter, fetchRandomCharacter } from "../redux/actions";
 import { SearchComponent, Header } from "./styled/SearchBarStyles";
 import { InputWrapper } from "./styled/FormsStyles";
+import Modal from "./Modal";
 
 export default function SearchBar() {
   const [validInput, setValidInput] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const searchInput = useRef("");
   const dispatcher = useDispatch();
 
@@ -31,18 +33,15 @@ export default function SearchBar() {
   // todo: change these logs for a modal
   const addBtnClickHandler = () => {
     // avoid adding one w/empty field on load
-    if (!searchInput.current.value) {
-      console.log("not valid input, baka, not send empty field, plx");
-      setValidInput(false);
-      return;
+    if (searchInput.current.value && validInput) {
+      dispatcher(fetchOneCharacter(searchInput.current.value));
+      return true;
     }
 
-    if (!validInput) {
-      console.log("not valid input, baka");
-      return;
-    }
-
-    dispatcher(fetchOneCharacter(searchInput.current.value));
+    // invalid input
+    console.log("not valid input, baka, not send empty field, plx");
+    setShowModal(true);
+    setValidInput(false);
   };
 
   const rndBtnHandler = () => {
@@ -51,6 +50,15 @@ export default function SearchBar() {
 
   return (
     <>
+      {showModal && (
+        <Modal
+          title={"Bubu desuwa! Invalid input!"}
+          msg={
+            "Invalid input, please enter single string, no numbers alone or something else, I check the input y'know!"
+          }
+          {...{ setShowModal }}
+        />
+      )}
       <Header>
         <h1>
           <img src="/img/rick-title.png" alt="animated title of rick&morty" />

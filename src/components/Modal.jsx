@@ -1,21 +1,14 @@
 import React from "react";
-import { useState } from "react";
 import { ModalBackground, ModalBody } from "./styled/ModalStyled";
 
-export default function Modal({ children }) {
-  const [shouldShow, setShouldShow] = useState(false);
-
+export default function Modal({ title, msg, setShowModal }) {
   return (
-    <>
-      <button onClick={() => setShouldShow(true)}>SHOW ASS-ETS</button>
-      {shouldShow && (
-        <ModalBackground onClick={(e) => e.stopPropagation()}>
-          <ModalBody onClick={() => setShouldShow(false)}>
-            <button onClick={() => setShouldShow(false)}>EXIT</button>
-            {children}
-          </ModalBody>
-        </ModalBackground>
-      )}
-    </>
+    <ModalBackground onClick={() => setShowModal(false)}>
+      <ModalBody onClick={(e) => e.stopPropagation()}>
+        <button onClick={() => setShowModal(false)}>X</button>
+        <h3>{title}</h3>
+        <p>{msg}</p>
+      </ModalBody>
+    </ModalBackground>
   );
 }

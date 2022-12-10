@@ -1,9 +1,20 @@
+- [Live Deployment](#live-deployment)
+- [todo:](#todo)
+- [Done](#done)
+- [Considerations](#considerations)
+- [Credits](#credits)
+- [Later updates](#later-updates)
+  - [Extra stuff](#extra-stuff)
+  - [Old redux installation](#old-redux-installation)
+
+
 # [Live Deployment](https://rick-morty-vite-react.vercel.app/)
 
 # todo:
-- change console logs, in SearchBar.jsx for a modal, that shows the error :D
 
 # Done
+- change console logs, in SearchBar.jsx for a modal, that shows the error :D
+  - Also added clos ebutton to mixins! :D (parent must be `position:relative`)
 - move all the reducer TICC logic to utils
 - remove the X button when card renders in favourites
 - better dir management in publid dir (svg & imgs)
@@ -39,6 +50,8 @@
 - upgraded navigation links
 - input check on search
 
+# Considerations
+- parent of mixin `closeButton` must be `position:relative`
 
 # Credits
 - [Alien Png by smalllikeart](https://www.flaticon.com/authors/smalllikeart)

@@ -1,6 +1,5 @@
 import {
   CardContainer,
-  CloseBtn,
   NameSpan,
   DetailsWrapper,
   NameStatusWrapper,
@@ -24,7 +23,7 @@ export default function Card(props) {
 
   return (
     <CardContainer>
-      {props.canRemove && <CloseBtn onClick={closeHandler}>X</CloseBtn>}
+      {props.canRemove && <button onClick={closeHandler}>X</button>}
       <img
         className="fav-svg"
         src={isFav ? "/svg/filled-heart.svg" : "/svg/empty-heart.svg"}
